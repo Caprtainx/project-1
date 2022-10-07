@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box
+  }
+  
+  body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://i.imgur.com/qVEdHdU.jpeg");
+  }
+  
+  header {
+    font-size: 4vmin;
+    letter-spacing: 1vmin;
+    color: orangered;
+  }
+  
+  #board {
+    display: grid;
+    grid-template-columns: repeat(9, 5vmin);
+    grid-template-rows: repeat(9, 5vmin);
+    margin-top: 3vmin;
+    border: .5vmin solid grey;
+    
+  }
+  
+  #board > div {
+    border: .1vmin solid grey;
+  }
+  
+  button {
+    margin-top: 4vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    border: 0.3vmin solid black;
+    border-color: orangered;
+    color: orangered;
+    background-color: black;
+  }
+  
+  button:hover {
+    color: white;
+    
+  }
