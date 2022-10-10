@@ -11,7 +11,7 @@ let flagEnabled = false;
 
 let gameOver = false;
 /*----- cached elements  -----*/
-document.getElementById('mines-count').innerText = amountOfMines;
+const gameOverEl = document.querySelector('h2')
 
 /*----- event listeners -----*/
 document.getElementById('flag-button').addEventListener('click', setFlag);
@@ -20,6 +20,7 @@ init();
 
 function init() {
     gameStart();
+    document.getElementById('mines-count').innerText = amountOfMines;
 }
 
 function setMines() {
@@ -82,6 +83,7 @@ function clickSquare() {
 
     if (locationOfMines.includes(square.id)) {
         // alert('GAME OVER');
+        gameOverEl.innerText = "You've been Bewitched"
         gameOver = true;
         revealMines();
         return;
