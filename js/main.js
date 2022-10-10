@@ -81,7 +81,7 @@ function clickSquare() {
     }
 
     if (locationOfMines.includes(square.id)) {
-        alert('GAME OVER');
+        // alert('GAME OVER');
         gameOver = true;
         revealMines();
         return;

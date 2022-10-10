@@ -40,7 +40,7 @@ h1 {
 }
 
 .square-clicked {
-  background-color: darkgrey;
+  background-color: black;
 }
 
 .number1 {
@@ -52,7 +52,7 @@ h1 {
 }
 
 .number3 {
-  color: violet;
+  color: darkmagenta;
 }
 
 .number4 {
