@@ -22,8 +22,16 @@ function init() {
     gameStart();
 }
 
+function setMines() {
+    locationOfMines.push('2-2');
+    locationOfMines.push('2-3');
+    locationOfMines.push('5-5');
+    locationOfMines.push('1-7');
+    locationOfMines.push('6-4');
+}
+
 function gameStart() {
-    
+    setMines();
     // generate the board
     for (let r = 0; r < rows; r++) {
         let row = [];
@@ -58,6 +66,26 @@ function clickSquare() {
             square.innerText = '🚩';
         } else if (square.innerText == '🚩') {
             square.innerText = '';
+        }
+        return;
+    }
+
+    if (locationOfMines.includes(square.id)) {
+        alert('GAME OVER');
+        gameOver = true;
+        revealMines();
+        return;
+    }
+}
+
+function revealMines() {
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            let square = board[r][c];
+            if (locationOfMines.includes(square.id)) {
+                square.innerText = '💣';
+                square.style.backgroundColor = 'red';
+            }
         }
     }
 }
