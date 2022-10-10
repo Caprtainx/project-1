@@ -3,7 +3,7 @@ let board = [];
 let rows = 10;
 let columns = 10;
 
-let amountOfMines = 8;
+let amountOfMines = 20;
 let locationOfMines = [];
 
 let squaresClicked = 0;
@@ -59,6 +59,10 @@ function setFlag() {
 }
 
 function clickSquare() {
+    if (gameOver || this.classList.contains('sqaure-clicked')) {
+        return;
+    }
+    
     // this allows us to place and remove flags as needed
     let square = this;
     if (flagEnabled) {
@@ -89,7 +93,7 @@ function revealMines() {
         for (let c = 0; c < columns; c++) {
             let square = board[r][c];
             if (locationOfMines.includes(square.id)) {
-                square.innerText = '💣';
+                square.innerText = '🎃';
                 square.style.backgroundColor = 'red';
             }
         }
@@ -100,6 +104,12 @@ function checkMine(r, c) {
     if (r < 0 || r >= rows || c < 0 || c >= columns) {
         return;
     }
+    if (board[r][c].classList.contains('square-clicked')){
+        return;
+    }
+
+    board[r][c].classList.add('square-clicked');
+    squaresClicked += 1;
 
     let minesFound = 0;
 
@@ -132,7 +142,11 @@ function checkMine(r, c) {
         checkMine(r + 1, c);
         checkMine(r + 1, c + 1);
 
+    }
 
+    if (squaresClicked == rows * columns - amountOfMines) {
+        document.getElementById('mines-count').innerText = 'Cleared';
+        gameOver = true; 
     }
 }
 
