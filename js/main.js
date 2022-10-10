@@ -71,11 +71,17 @@ function clickSquare() {
     }
 
     if (locationOfMines.includes(square.id)) {
-        alert('GAME OVER');
+        // alert('GAME OVER');
         gameOver = true;
         revealMines();
         return;
     }
+
+    let coords = square.id.split('-'); // seperates the string into an array of the string
+    let r = parseInt(coords[0]);
+    let c = parseInt(coords[1]);
+    checkMine(r, c);
+
 }
 
 function revealMines() {
@@ -88,4 +94,54 @@ function revealMines() {
             }
         }
     }
+}
+
+function checkMine(r, c) {
+    if (r < 0 || r >= rows || c < 0 || c >= columns) {
+        return;
+    }
+
+    let minesFound = 0;
+
+    // checking if there are mines in the row above the click
+    minesFound += checkSquare(r - 1, c - 1);
+    minesFound += checkSquare(r - 1, c);
+    minesFound += checkSquare(r - 1, c + 1);
+
+    // checking left and right row of the click
+    minesFound += checkSquare(r, c - 1);
+    minesFound += checkSquare(r, c + 1);
+
+    //checking if there are mines in the row below the click
+    minesFound += checkSquare(r + 1, c -1);
+    minesFound += checkSquare(r + 1, c);
+    minesFound += checkSquare(r + 1, c + 1);
+
+    if (minesFound > 0) {
+        board[r][c].innerText = minesFound;
+        board[r][c].classList.add('number' + minesFound.toString()); 
+    } else {
+        checkMine(r - 1, c - 1);
+        checkMine(r - 1, c);
+        checkMine(r - 1, c + 1);
+        
+        checkMine(r, c - 1);
+        checkMine(r, c + 1);
+        
+        checkMine(r + 1, c - 1);
+        checkMine(r + 1, c);
+        checkMine(r + 1, c + 1);
+
+
+    }
+}
+
+function checkSquare(r, c) {
+    if (r < 0 || r >= rows || c < 0 || c >= columns) {
+        return 0;
+    }
+    if (locationOfMines.includes(r.toString() + '-' + c.toString())) {
+        return 1;
+    }
+    return 0;
 }
