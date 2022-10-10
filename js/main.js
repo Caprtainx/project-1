@@ -47,7 +47,7 @@ function gameStart() {
             let square = document.createElement('div')
             square.id = r.toString() + '-' + c.toString();
             square.addEventListener('click', clickSquare);
-            document. getElementById('board').append(square);
+            document.getElementById('board').append(square);
             row.push(square);
         }
         board.push(row);
@@ -83,7 +83,6 @@ function clickSquare() {
     }
 
     if (locationOfMines.includes(square.id)) {
-        // alert('GAME OVER');
         gameOverEl.innerText = "You've been Bewitched"
         gameOver = true;
         revealMines();
