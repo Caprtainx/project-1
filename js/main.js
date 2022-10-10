@@ -3,7 +3,7 @@ let board = [];
 let rows = 10;
 let columns = 10;
 
-let amountOfMines = 20;
+let amountOfMines = 15;
 let locationOfMines = [];
 
 let squaresClicked = 0;
@@ -23,11 +23,17 @@ function init() {
 }
 
 function setMines() {
-    locationOfMines.push('2-2');
-    locationOfMines.push('2-3');
-    locationOfMines.push('5-5');
-    locationOfMines.push('1-7');
-    locationOfMines.push('6-4');
+    let minesLeft = amountOfMines; // creates the randomized locations
+    while (minesLeft > 0) {
+        let r = Math.floor(Math.random() * rows);
+        let c = Math.floor(Math.random() * columns);
+        let id = r.toString() + '-' + c.toString();
+
+        if (!locationOfMines.includes(id)) { // prevents more then one bomb being randomized to the same square
+            locationOfMines.push(id);
+            minesLeft -= 1;
+        }
+    }
 }
 
 function gameStart() {
@@ -75,7 +81,7 @@ function clickSquare() {
     }
 
     if (locationOfMines.includes(square.id)) {
-        // alert('GAME OVER');
+        alert('GAME OVER');
         gameOver = true;
         revealMines();
         return;
