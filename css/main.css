@@ -8,7 +8,7 @@ body {
 header {
   font-size: 80px;
   font-weight: bold;
-  color: orange;
+  color: orangered;
 }
 
 h1 {
@@ -48,36 +48,48 @@ h1 {
 }
 
 .number2 {
-  color: orange;
+  color: orangered;
 }
 
 .number3 {
-  color: orange;
+  color: violet;
 }
 
 .number4 {
-  color: orange;
+  color: purple;
 }
 
 .number5 {
-  color: orange;
+  color: darkorchid;
 }
 
 .number6 {
-  color: orange;
+  color: darkmagenta;
 }
 
 .number7 {
-  color: orange;
+  color: brown;
 }
 
 .number8 {
-  color: orange;
+  color: red;
 }
 
 #flag-button {
   width: 100px;
   height: 50px;
   font-size: 20px;
-  background-color: lightgrey;
+  background-color: darkgray;
+  border-color: purple;
+  border-radius: 50%;
+}
+
+#play-again {
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  color: purple;
+  background-color: darkgrey;
+  border-color: purple;
+  border-radius: 50%;
 }
