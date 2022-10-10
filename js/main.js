@@ -12,6 +12,7 @@ let flagEnabled = false;
 let gameOver = false;
 /*----- cached elements  -----*/
 const gameOverEl = document.querySelector('h2')
+let minesEl = document.getElementById('mines-count')
 
 /*----- event listeners -----*/
 document.getElementById('flag-button').addEventListener('click', setFlag);
@@ -20,7 +21,7 @@ init();
 
 function init() {
     gameStart();
-    document.getElementById('mines-count').innerText = amountOfMines;
+    minesEl.innerText = amountOfMines;
 }
 
 function setMines() {
@@ -153,7 +154,7 @@ function checkMine(r, c) {
     }
 
     if (squaresClicked == rows * columns - amountOfMines) {
-        document.getElementById('mines-count').innerText = 'Cleared';
+        minesEl.innerText = 'Cleared';
         gameOver = true; 
     }
 }
