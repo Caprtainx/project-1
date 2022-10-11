@@ -109,7 +109,8 @@ function revealMines() {
 }
 
 function checkMine(r, c) {
-    if (r < 0 || r >= rows || c < 0 || c >= columns) {
+    //gaurd
+    if (r < 0 || r >= rows || c < 0 || c >= columns) { // check if the r and c are within the board
         return;
     }
     if (board[r][c].classList.contains('square-clicked')){
@@ -135,9 +136,9 @@ function checkMine(r, c) {
     minesFound += checkSquare(r + 1, c);
     minesFound += checkSquare(r + 1, c + 1);
 
-    if (minesFound > 0) {
+    if (minesFound > 0) { // this shows the number on the row or column around the click of how many bombs there are 
         board[r][c].innerText = minesFound;
-        board[r][c].classList.add('number' + minesFound.toString()); 
+        board[r][c].classList.add('number' + minesFound.toString()); // adds the css for the number 
     } else {
         checkMine(r - 1, c - 1);
         checkMine(r - 1, c);
@@ -159,10 +160,10 @@ function checkMine(r, c) {
 }
 
 function checkSquare(r, c) {
-    if (r < 0 || r >= rows || c < 0 || c >= columns) {
+    if (r < 0 || r >= rows || c < 0 || c >= columns) { // checks if the r and c are within the board
         return 0;
     }
-    if (locationOfMines.includes(r.toString() + '-' + c.toString())) {
+    if (locationOfMines.includes(r.toString() + '-' + c.toString())) { // if clicked on within the board the array for r and c is created with the string of "r#-c#"
         return 1;
     }
     return 0;
