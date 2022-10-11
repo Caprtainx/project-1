@@ -41,7 +41,7 @@ h2 {
   height: 38px;
   border: 1px solid purple;
   
-  /* centers he text in the square */
+  /* centers the text in the square */
   font-size: 30px;
   display: flex;
   justify-content: center;
