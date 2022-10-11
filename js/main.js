@@ -139,7 +139,7 @@ function checkMine(r, c) {
     if (minesFound > 0) { // this shows the number on the row or column around the click of how many bombs there are 
         board[r][c].innerText = minesFound;
         board[r][c].classList.add('number' + minesFound.toString()); // adds the css for the number 
-    } else {
+    } else { // flood animation using recursion
         checkMine(r - 1, c - 1);
         checkMine(r - 1, c);
         checkMine(r - 1, c + 1);
