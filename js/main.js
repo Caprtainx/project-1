@@ -13,14 +13,15 @@ let gameOver = false;
 /*----- cached elements  -----*/
 const gameOverEl = document.querySelector('h2')
 let minesEl = document.getElementById('mines-count')
-
+const playAgainBtn = document.querySelector('.playAgainBtn')
 /*----- event listeners -----*/
 document.getElementById('flag-button').addEventListener('click', setFlag);
+playAgainBtn.addEventListener('click', init)
 /*----- functions -----*/
 init();
 
-function init() {
-    gameStart();
+function init(event) {
+    gameStart(event);
     minesEl.innerText = amountOfMines;
 }
 
