@@ -16,12 +16,12 @@ let minesEl = document.getElementById('mines-count')
 const playAgainBtn = document.querySelector('.playAgainBtn')
 /*----- event listeners -----*/
 document.getElementById('flag-button').addEventListener('click', setFlag);
-playAgainBtn.addEventListener('click', init)
+// playAgainBtn.addEventListener('click', init)
 /*----- functions -----*/
 init();
 
-function init(event) {
-    gameStart(event);
+function init() {
+    gameStart();
     minesEl.innerText = amountOfMines;
 }
 
