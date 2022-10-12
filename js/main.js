@@ -3,7 +3,7 @@ let board = [];
 let rows = 10;
 let columns = 10;
 
-let amountOfMines = 15;
+let amountOfMines = 1;
 let locationOfMines = [];
 
 let squaresClicked = 0;
@@ -16,7 +16,6 @@ let minesEl = document.getElementById('mines-count')
 const playAgainBtn = document.querySelector('.playAgainBtn')
 /*----- event listeners -----*/
 document.getElementById('flag-button').addEventListener('click', setFlag);
-// playAgainBtn.addEventListener('click', init)
 /*----- functions -----*/
 init();
 
@@ -156,6 +155,7 @@ function checkMine(r, c) {
 
     if (squaresClicked == rows * columns - amountOfMines) {
         minesEl.innerText = 'Cleared';
+        minesEl.style.color = 'orange';
         gameOver = true; 
     }
 }
