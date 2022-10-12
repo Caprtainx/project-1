@@ -72,7 +72,7 @@ function clickSquare() {
     }
     
     // this allows us to place and remove flags as needed
-    let square = this;
+    let square = this; // this means that its getting all the divs created on the board and making it a global function that can be called anywhere
     if (flagEnabled) {
         if (square.innerText == '') {
             square.innerText = '🚩';
@@ -109,7 +109,7 @@ function revealMines() {
 }
 
 function checkMine(r, c) {
-    //gaurd
+    //guard
     if (r < 0 || r >= rows || c < 0 || c >= columns) { // check if the r and c are within the board
         return;
     }
@@ -164,7 +164,7 @@ function checkSquare(r, c) {
     if (r < 0 || r >= rows || c < 0 || c >= columns) { // checks if the r and c are within the board
         return 0;
     }
-    if (locationOfMines.includes(r.toString() + '-' + c.toString())) { // if clicked on within the board the array for r and c is created with the string of "r#-c#"
+    if (locationOfMines.includes(r.toString() + '-' + c.toString())) { // if clicked on within the board, the array for r and c is created with the string of "r#-c#"
         return 1;
     }
     return 0;
