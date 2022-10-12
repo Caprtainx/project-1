@@ -3,7 +3,7 @@ let board = [];
 let rows = 10;
 let columns = 10;
 
-let amountOfMines = 1;
+let amountOfMines = 15;
 let locationOfMines = [];
 
 let squaresClicked = 0;
