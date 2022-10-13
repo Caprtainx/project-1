@@ -15,7 +15,7 @@ Minesweeper is single-player logic-based computer game played on rectangular boa
 
 </div>
 
-<details>
+<details open>
   <summary>Pictures of my game</summary>
 
   | Description | Screenshot | 
@@ -24,10 +24,12 @@ Minesweeper is single-player logic-based computer game played on rectangular boa
     src="https://github.com/Caprtainx/project-1/blob/main/README/Screen%20Shot%202022-10-13%20at%207.41.29%20AM.png"
     width="700"
   /> |
+  
   | <h3>Game loss</h3> | <img
     src="https://github.com/Caprtainx/project-1/blob/main/README/Screen%20Shot%202022-10-13%20at%207.41.50%20AM.png"
     width="700"
   /> |
+  
   | <h3>Game win</h3> | <img
     src="https://github.com/Caprtainx/project-1/blob/main/README/Screen%20Shot%202022-10-13%20at%207.42.44%20AM.png"
     width="700"
