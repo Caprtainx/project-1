@@ -6,7 +6,7 @@
 
 ##### Created by Benjamin Medina
 
-[![GitHub Badge](https://img.shields.io/badge/-@profpan396-junglegreen?style=flat&logo=GitHub&logoColor=black)]()
+[![GitHub Badge](https://img.shields.io/badge/-@profpan396-junglegreen?style=flat&logo=GitHub&logoColor=black)](https://github.com/Caprtainx)
 
 
 ## :pencil: Description
